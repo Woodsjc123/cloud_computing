@@ -73,14 +73,12 @@ function AddItemForm({ onNewItem }) {
     const [newItem, setNewItem] = React.useState('');
     const [submitting, setSubmitting] = React.useState(false);
     
-    const current = new Date();
-
     const submitNewItem = e => {
         e.preventDefault();
         setSubmitting(true);
         fetch('/items', {
             method: 'POST',
-            body: JSON.stringify({ name: newItem }), current.toLocaleString(),
+            body: JSON.stringify({ name: newItem }),
             headers: { 'Content-Type': 'application/json' },
         })
             .then(r => r.json())
