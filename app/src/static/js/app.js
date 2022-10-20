@@ -137,13 +137,6 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
             onItemRemoval(item),
         );
     };
-    
-    constructor(props) {
-        super(props);
-        this.state = {
-            date: new Date().toLocaleString()
-        };
-    }
 
     return (
         <Container fluid className={`item ${item.completed && 'completed'}`}>
@@ -180,10 +173,6 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         <i className="fa fa-trash text-danger" />
                     </Button>
                 </Col>
-                <Col className="date">
-                    <p> ddd {this.state.date}</p>
-                </Col>
-                    
             </Row>
         </Container>
     );
